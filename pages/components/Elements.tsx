@@ -1,8 +1,10 @@
 import { Box, TextField, Typography } from "@mui/material"
 import { useController } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 
-export const Input =({name="", control ,place="",errors={},typeField=""})=>{
+export const Input =({name="",place="",errors={},typeField=""})=>{
     const script = /[<">/']/;
+    const {control}=useForm();
 
     let {field}=useController({
         control,

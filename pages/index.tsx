@@ -29,7 +29,6 @@ export default function Home() {
     datos.gender=gender;
     datos.interests=interests;
     //emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-
     emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_KEY, datos, process.env.PUBLIC_KEY)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
@@ -70,13 +69,13 @@ export default function Home() {
             sx={{textAlign:"center",borderRadius:3, backgroundColor:"yellow",mb:10,boxShadow:"inherit"}}
           />
           <Box sx={{justifyContent:{md:"space-around",xs:"center"}, flexDirection:{md:"row",xs:"column"}, display:"flex"}}>
-            <Input control={control} 
+            <Input 
                     name='firstName' 
                     place='First-Name' 
                     errors={errors.firstName} 
                     typeField="text"
                     />
-            <Input control={control} 
+            <Input 
                     name='lastName' 
                     place='Last-Name' 
                     errors={errors.lastName} 
@@ -84,13 +83,13 @@ export default function Home() {
                     />
           </Box>
           <Box sx={{justifyContent:{md:"space-around",xs:"center"}, flexDirection:{md:"row",xs:"column"}, display:"flex"}}>
-            <Input control={control} 
+            <Input 
                     name='phone' 
                     place='Tel' 
                     errors={errors.phone} 
                     typeField="number"
                     />
-            <Input control={control} 
+            <Input 
                     name='email' 
                     place='email'
                     errors={errors.email} 
